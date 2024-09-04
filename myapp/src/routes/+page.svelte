@@ -15,69 +15,89 @@
     onMount(() => {
         getapi();
     }); 
+
+    
 </script>
 
 
-<section class="card">
-    {#if person} 
-    <!-- Als person data geladen is, laat dit zien -->
-    <h1>{person.name} {person.surname}</h1> 
+<div class="wrapper">
+    <section class="card">
+        {#if person} 
+        <!-- Als person data geladen is, laat dit zien -->
+        <h1>{person.name} {person.surname}</h1> 
+    
+        <p>{person.bio}</p>
+        <ul>
+            <li><a href="{person.github_handle}">Github</a></li>
+            <li><a href="{person.website}">Website</a></li>
+        </ul>
+        {:else}
+            <!-- Als person data aan het laden is, laat dit zien -->
+        <h1>Loading Data...</h1>
+        {/if}
+    
+    </section>
+</div>
 
-    <p>{person.bio}</p>
-    <ul>
-        <li><a href="{person.github_handle}">Github</a></li>
-        <li><a href="{person.website}">Website</a></li>
-    </ul>
-    {:else}
-        <!-- Als person data aan het laden is, laat dit zien -->
-    <h1>Loading Data...</h1>
-    {/if}
 
-</section>
-<section class="next">
-    Your eyes can deceive you; don’t trust them
-</section>
 
 
 <style>
+    body{
+        margin: none;
+    }
+    .wrapper{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+    }
     .card{
         margin: 0 auto;
-        margin-top: 10%;
-        padding: 2em;
+        margin-bottom: 60px;
+        padding: 2.2em;
         width: 300px;
         border: 8px groove white;
         border-radius: 4px;
         border-style: double;
         background:  url(boston-public-library-YoXxWEPOawY-unsplash.jpeg) ;
         background-size: cover;
-        transition: ease-out 0.3s;
+        transition: ease-out 0.7s;
+        background-position: center;
         &:hover{
             cursor: pointer;
-            margin-bottom: -50px;
-            transform: scale(105%);
-            transition: ease-in 0.3s; 
+            transform: scale(110%);
+            transition: ease-in 0.6s; 
+            background-position: bottom;
+            background-size: 400%;
+            
         }
         &:target{
             transform: scale(1005%);
         }
         & h1 , p , a{
             font-family: 'Times New Roman', Times, serif;
-            color: white;
+            color: rgb(6, 6, 6);
+            font-weight: 500;
         }
         & ul{
             list-style-type: none;
             padding-inline-start: 0px;
             display: flex;
-            gap: 1em;
+            gap: 2.2em;
             & li{
 
             }
         }
         & a{
-            text-decoration: none;
-            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 0.25em;
+            font-weight: 500;
+            transition: ease-out 0.3s;
             &:hover{
+                text-underline-offset: 0.50em;
                 cursor: pointer;
+                transition: ease-in 0.3s;
 
             }
         }
@@ -89,6 +109,7 @@
         & a{
             text-decoration: none;
             font-weight: 600;
+            font-style: italic;
             &:hover{
                 cursor: pointer;
 
