@@ -16,7 +16,6 @@
         getapi();
     }); 
 
-    
 </script>
 
 
@@ -70,10 +69,6 @@
             transition: ease-in 0.6s; 
             background-position: bottom;
             background-size: 400%;
-            
-        }
-        &:target{
-            transform: scale(1005%);
         }
         & h1 , p , a{
             font-family: 'Times New Roman', Times, serif;
@@ -85,9 +80,6 @@
             padding-inline-start: 0px;
             display: flex;
             gap: 2.2em;
-            & li{
-
-            }
         }
         & a{
             text-decoration: underline;
@@ -98,20 +90,6 @@
                 text-underline-offset: 0.50em;
                 cursor: pointer;
                 transition: ease-in 0.3s;
-
-            }
-        }
-    }
-    .next{
-        margin: 0 auto;
-        width: max-content;
-        padding: 2em;
-        & a{
-            text-decoration: none;
-            font-weight: 600;
-            font-style: italic;
-            &:hover{
-                cursor: pointer;
 
             }
         }
