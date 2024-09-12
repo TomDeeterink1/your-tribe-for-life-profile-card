@@ -20,13 +20,13 @@
 
 
 <div class="wrapper">
-    <section class="card">
+    <section class="main-section">
         {#if person} 
         <!-- Als person data geladen is, laat dit zien -->
+        <img src="{person.avatar}" width="200px" height="240px">
         <h1>{person.name} {person.surname}</h1> 
-    
         <p>{person.bio}</p>
-        <ul>
+        <ul class="socials">
             <li><a href="{person.github_handle}">Github</a></li>
             <li><a href="{person.website}">Website</a></li>
         </ul>
@@ -38,60 +38,64 @@
     </section>
 </div>
 
-
-
-
 <style>
-    body{
-        margin: none;
-    }
-    .wrapper{
-        width: 100%;
+   .wrapper{
+     background-color: black;
+     padding: 2rem;
+     & .main-section{
         height: 100vh;
-        display: flex;
-        align-items: center;
-    }
-    .card{
+        max-width: 800px;
         margin: 0 auto;
-        margin-bottom: 60px;
-        padding: 2.2em;
-        width: 300px;
-        border: 8px groove white;
-        border-radius: 4px;
-        border-style: double;
-        background:  url(boston-public-library-YoXxWEPOawY-unsplash.jpeg) ;
-        background-size: cover;
-        transition: ease-out 0.7s;
-        background-position: center;
-        &:hover{
-            cursor: pointer;
-            transform: scale(110%);
-            transition: ease-in 0.6s; 
-            background-position: bottom;
-            background-size: 400%;
+        & img{
+            object-fit: cover;
+            object-position: top;
         }
-        & h1 , p , a{
-            font-family: 'Times New Roman', Times, serif;
-            color: rgb(6, 6, 6);
-            font-weight: 500;
+        & h1{
+            color: antiquewhite;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 3.5em;
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem ;
+            border-bottom: 2px solid antiquewhite;
+            margin: 0.25rem 0rem;
+        }
+        & p{
+            color: antiquewhite;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 1.5rem;
+            border-left: 2px solid antiquewhite;
+            padding-left: 1rem;
+            font-size: 1.5em;
         }
         & ul{
             list-style-type: none;
-            padding-inline-start: 0px;
+            padding-inline-start: 1rem;
+            padding-bottom: 0.5rem;
+            border-left: 2px solid orangered;
+        }
+        & .socials{
             display: flex;
-            gap: 2.2em;
+            flex-direction: column;
+            gap: 1.5rem;
+                & a{
+                font-size: 1.5em;
+                font-family: Arial, Helvetica, sans-serif;
+                color: orangered;
+                text-decoration: underline;
+                text-underline-offset: 4px;
+                transition: ease-out 0.3s;
+                
+                    &:hover , &:focus{
+                        border-radius: 4px;
+                        background-color: antiquewhite;
+                        padding: 10px 50px;
+                        transition: ease-in 0.2s;
+                        text-underline-offset: 8px;
+                        color: rgb(232, 63, 2);
+                    }
+                }
         }
-        & a{
-            text-decoration: underline;
-            text-underline-offset: 0.25em;
-            font-weight: 500;
-            transition: ease-out 0.3s;
-            &:hover{
-                text-underline-offset: 0.50em;
-                cursor: pointer;
-                transition: ease-in 0.3s;
-
-            }
-        }
-    }
+     }
+   }
+   
 </style>
