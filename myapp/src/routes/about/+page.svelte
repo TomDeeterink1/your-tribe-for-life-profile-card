@@ -63,6 +63,27 @@
                 word-spacing: 10px;
                 text-align: center;
             }
+            & .socials{
+                list-style-type: none;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 3em;
+                align-items: center;
+                padding-inline-start: 0px;
+            }
+            & a{
+                position: absolute;
+                z-index: 99;
+                margin-left: -30px;
+                text-align: center;
+                text-underline-offset: 2px;
+                transition: ease-out 0.2s;
+                &:hover{
+                    text-underline-offset: 8px;
+                    transition: ease-in 0.3s;
+                }
+            }
             & .lightsaber1{
                 box-shadow: 40px 0px 20px  black;
                 transition: ease-in 0.4s;
@@ -128,5 +149,4 @@
             }
         }
    }
-   
 </style>
