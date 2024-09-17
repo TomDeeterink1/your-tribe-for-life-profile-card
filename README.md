@@ -23,7 +23,7 @@ Welkom! In deze repo staat mijn profile card. Volg de stappen hieronder om het p
 
 3. **Directus configureren**  
    Om Directus te gebruiken, moet je Directus opzetten. Volg de stappen van de Directus-documentatie om dit te doen:  
-   [Directus Installatiegids](https://docs.directus.io/getting-started/installation.html)
+   [Directus Installatiegids]([https://docs.directus.io/getting-started/installation.html](https://docs.directus.io/blog/getting-started-directus-sveltekit.html))
 
 ## Het Project Starten
 
